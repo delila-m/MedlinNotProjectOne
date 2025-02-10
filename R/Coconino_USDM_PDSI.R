@@ -1,0 +1,20 @@
+#' A time series of Average USDM and PDSI values for Coconino county in Arizona.
+#'
+#' This set contains data about the location and date of PDSI measurements taken from Coconino county,
+#' along with weighted averages of USDM measurements covering Coconino county. The USDM data isn't provided
+#' in a specific spatial format, only as land area percentages. To quantify the USDM data for future modeling
+#' purposes, weighted averages were created using the provided land area percentages as weights.
+#'
+#' @format a data frame with 677727 observations with 6 columns.
+#' \describe{
+#'   \item{Date}{The date of observation in 'YYYY-MM-DD' format.}
+#'   \item{x}{The Longitude degree the PDSI observation was taken from.}
+#'   \item{y}{The Latitude degree the PDSI observation was taken from.}
+#'   \item{cell}{The cell number which the PDSI observation was taken from.}
+#'   \item{USDM_Avg}{The average of the U.S. Drought Monitor (USDM) category for Coconino county, weighted by land area percent. The USDM is a categorical scale used to quantify drought patterns, ranging from D0 (Abnormally Dry) to D4 (Exceptional Drought) based on measurements of precipitation, soil moisture, and temperature among other indicators. From drought.gov, USDM data is provided in a csv file, as a percentage of land in each categorical drought category. The weighted average was calculated to quantify USDM as a numerical variable instead of the categorical scale.}
+#'   \item{PDSI}{The Palmer Drought Severity Index measurement of a cell in Coconino county. PDSI  ranges from -10 (Dry) to +10 (wet) and uses readily available temperature and precipitation data reconstructed from tree-ring estimates to estimate relative dryness in an area. From drought.gov, PDSI data is provided as a NetCDF file, with spatially gridded PDSI measurements. PDSI measurements are extracted along with the respective Latitude, Longitude, and cell number.}
+#' }
+#' @source Data compiled from two drought.gov datasets: \cr
+#' USDM data: \url{https://www.drought.gov/historical-information?dataset=0&selectedDateUSDM=20240924&state=Arizona&countyFips=04005}
+#' PDSI data: \url{https://www.drought.gov/data-maps-tools/us-gridded-palmer-drought-severity-index-pdsi-gridmet}
+"Coconino_USDM_PDSI"
